@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +10,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  color: #e0e0e0;
+  line-height: 1.6;
 }
 
 .cosmic-bg {
@@ -79,7 +79,7 @@ body {
 .container {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 30px;
   position: relative;
 }
 
@@ -91,9 +91,9 @@ body {
 
 .header h1 {
   font-family: "Orbitron", monospace;
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
   font-weight: 900;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   background: linear-gradient(
     45deg,
     #ff006e,
@@ -109,6 +109,7 @@ body {
   animation: gradientShift 4s ease infinite;
   text-shadow: 0 0 50px rgba(255, 0, 110, 0.5);
   position: relative;
+  letter-spacing: 2px;
 }
 
 .header h1::before {
@@ -128,9 +129,13 @@ body {
   );
   background-size: 300% 300%;
   animation: gradientShift 4s ease infinite;
-  filter: blur(20px);
+  filter: blur(30px);
   opacity: 0.3;
   z-index: -1;
+  border-radius: 50%;
+  width: 80%;
+  margin: 0 auto;
+  left: 10%;
 }
 
 @keyframes gradientShift {
@@ -146,15 +151,17 @@ body {
 }
 
 .header p {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   color: #a0a0a0;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 15px;
 }
 
 .roadmap {
   position: relative;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .neural-network {
@@ -162,7 +169,7 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 6px;
+  width: 12px; /* زيادة عرض الخط */
   height: 100%;
   background: linear-gradient(
     to bottom,
@@ -182,8 +189,8 @@ body {
     #e91e63,
     #ff006e
   );
-  border-radius: 3px;
-  box-shadow: 0 0 20px #ff006e, 0 0 40px #ff006e55, 0 0 80px #ff006e33;
+  border-radius: 4px;
+  box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), 0 0 80px rgba(255, 0, 110, 0.3);
   animation: neuralPulse 3s ease-in-out infinite;
 }
 
@@ -194,8 +201,8 @@ body {
     filter: brightness(1);
   }
   50% {
-    transform: translateX(-50%) scaleY(1.02);
-    filter: brightness(1.2);
+    transform: translateX(-50%) scaleY(1.03);
+    filter: brightness(1.3);
   }
 }
 
@@ -217,7 +224,7 @@ body {
 
 .week {
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   position: relative;
   align-items: center;
   min-height: 300px;
@@ -227,25 +234,45 @@ body {
   flex-direction: row-reverse;
 }
 
+/* تعديل المسافات الأساسية للكروت */
+.week-content {
+  flex: 1;
+  max-width: 50%;
+  margin: 0 20px; /* تقليل المسافة لتبدأ من عند الخط */
+  position: relative;
+  transition: all 0.5s ease;
+}
+
 .week-nucleus {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Orbitron", monospace;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   color: #fff;
-  z-index: 20;
+  z-index: 200; /* زيادة z-index */
   cursor: pointer;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2),
-    inset 0 0 20px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  top: 50%; /* إضافة لتثبيت الموضع */
+  background: rgba(20, 20, 40, 0.95);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+}
+
+.week-nucleus:hover {
+  transform: translateX(-50%) scale(1.1);
+  filter: brightness(1.2);
 }
 
 .week-nucleus::before {
@@ -261,12 +288,20 @@ body {
 .week-nucleus::after {
   content: "";
   position: absolute;
-  width: 130%;
-  height: 130%;
+  width: 140%;
+  height: 140%;
   border-radius: 50%;
-  border: 2px solid;
+  border: 3px solid;
   opacity: 0.3;
   animation: orbit 6s linear infinite reverse;
+}
+
+.week-nucleus span {
+  background: linear-gradient(45deg, #fff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
 }
 
 .week:nth-child(1) .week-nucleus::before {
@@ -334,25 +369,198 @@ body {
   }
 }
 
+/* تعديل المسافات الأساسية للكروت */
 .week-content {
   flex: 1;
-  max-width: 45%;
-  margin: 0 5%;
+  max-width: 50%;
+  margin: 0 100px; /* تقليل المسافة لتكون أقرب للمنتصف */
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .week-content {
+    max-width: 100%;
+    margin: 40px 20px; /* تعديل المسافات للموبايل */
+  }
+}
+
+/* تعديل المسافة حسب حجم الشاشة */
+@media (min-width: 1200px) {
+  .week-content {
+    margin: 0 150px; /* مسافة أكبر للشاشات الكبيرة */
+  }
+}
+
+@media (min-width: 1400px) {
+  .week-content {
+    margin: 0 180px; /* مسافة أكبر للشاشات الأكبر */
+  }
 }
 
 .week-card {
-  background: rgba(20, 20, 30, 0.9);
-  border-radius: 30px;
-  padding: 40px;
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(20, 20, 30, 0.7);
+  border-radius: 35px;
+  padding: 50px;
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
-  transform: translateY(50px);
+  transform: translateY(100px);
   opacity: 0;
-  animation: materialise 1s ease-out forwards;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5),
+  animation: none; /* إزالة الأنيميشن القديم */
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 100; /* إضافة z-index أقل من week-nucleus */
+  width: 100%; /* تأكيد أن الكارت يأخذ العرض الكامل */
+  min-width: 400px; /* حد أدنى لعرض الكارت */
+}
+
+.week-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* تحريك الكروت للخارج عند hover */
+.week:nth-child(even) .week-card:hover {
+  transform: translateX(50px) translateY(-10px);
+  box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.week:nth-child(odd) .week-card:hover {
+  transform: translateX(-50px) translateY(-10px);
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* تحسين ألوان آخر 3 كروت */
+.week:nth-child(6) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 87, 34, 0.2),
+    rgba(255, 112, 67, 0.2)
+  );
+  border: 1.5px solid rgba(255, 87, 34, 0.5);
+  box-shadow: 0 30px 60px rgba(255, 87, 34, 0.2);
+}
+
+.week:nth-child(7) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(233, 30, 99, 0.2),
+    rgba(240, 98, 146, 0.2)
+  );
+  border: 1.5px solid rgba(233, 30, 99, 0.5);
+  box-shadow: 0 30px 60px rgba(233, 30, 99, 0.2);
+}
+
+.week:nth-child(8) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 188, 212, 0.2),
+    rgba(38, 198, 218, 0.2)
+  );
+  border: 1.5px solid rgba(0, 188, 212, 0.5);
+  box-shadow: 0 30px 60px rgba(0, 188, 212, 0.2);
+}
+
+/* إضافة تأثيرات إضافية للكروت عند الظهور */
+.week:nth-child(even) .week-card {
+  transform: translateY(100px) translateX(50px);
+}
+
+.week:nth-child(odd) .week-card {
+  transform: translateY(100px) translateX(-50px);
+}
+
+.week:nth-child(even) .week-card.visible {
+  transform: translateY(0) translateX(0);
+}
+
+.week:nth-child(odd) .week-card.visible {
+  transform: translateY(0) translateX(0);
+}
+
+/* Colored backgrounds for each week card - تعريف موحد لألوان الكروت */
+.week:nth-child(1) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 110, 0.15),
+    rgba(255, 23, 68, 0.15)
+  );
+  border: 1px solid rgba(255, 0, 110, 0.3);
+  box-shadow: 0 30px 60px rgba(255, 0, 110, 0.2);
+}
+.week:nth-child(2) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(131, 56, 236, 0.15),
+    rgba(156, 39, 176, 0.15)
+  );
+  border: 1px solid rgba(131, 56, 236, 0.3);
+  box-shadow: 0 30px 60px rgba(131, 56, 236, 0.2);
+}
+.week:nth-child(3) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(58, 134, 255, 0.15),
+    rgba(33, 150, 243, 0.15)
+  );
+  border: 1px solid rgba(58, 134, 255, 0.3);
+  box-shadow: 0 30px 60px rgba(58, 134, 255, 0.2);
+}
+.week:nth-child(4) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(6, 255, 165, 0.15),
+    rgba(76, 175, 80, 0.15)
+  );
+  border: 1px solid rgba(6, 255, 165, 0.3);
+  box-shadow: 0 30px 60px rgba(6, 255, 165, 0.2);
+}
+.week:nth-child(5) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 190, 11, 0.15),
+    rgba(255, 193, 7, 0.15)
+  );
+  border: 1px solid rgba(255, 190, 11, 0.3);
+  box-shadow: 0 30px 60px rgba(255, 190, 11, 0.2);
+}
+
+/* ألوان مميزة لآخر 3 كروت */
+.week:nth-child(6) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 87, 34, 0.15),
+    rgba(255, 112, 67, 0.15)
+  );
+  border: 1px solid rgba(255, 87, 34, 0.3);
+  box-shadow: 0 30px 60px rgba(255, 87, 34, 0.2);
+}
+.week:nth-child(7) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(233, 30, 99, 0.15),
+    rgba(240, 98, 146, 0.15)
+  );
+  border: 1px solid rgba(233, 30, 99, 0.3);
+  box-shadow: 0 30px 60px rgba(233, 30, 99, 0.2);
+}
+.week:nth-child(8) .week-card {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 188, 212, 0.15),
+    rgba(38, 198, 218, 0.15)
+  );
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 188, 212, 0.2);
+}
+
+.week-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .week-card::before {
@@ -361,8 +569,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  border-radius: 30px 30px 0 0;
+  height: 6px;
+  border-radius: 35px 35px 0 0;
 }
 
 .week:nth-child(1) .week-card::before {
@@ -399,7 +607,7 @@ body {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.05) 0%,
     transparent 70%
   );
   transform: translate(-50%, -50%);
@@ -408,8 +616,9 @@ body {
 
 @keyframes materialise {
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -439,26 +648,28 @@ body {
 }
 
 .week-title {
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700;
   color: #fff;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 1px;
 }
 
 .week-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 15px;
+  width: clamp(60px, 8vw, 80px);
+  height: clamp(60px, 8vw, 80px);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .week-icon::before {
@@ -469,7 +680,7 @@ body {
   background: linear-gradient(
     45deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.15),
     transparent
   );
   transform: translateX(-100%);
@@ -514,15 +725,49 @@ body {
 }
 
 .session {
-  margin-bottom: 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 25px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.4s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
+
+/* Colored sessions matching their week */
+.week:nth-child(1) .session {
+  background: rgba(255, 0, 110, 0.1);
+  border: 1px solid rgba(255, 0, 110, 0.3);
+}
+.week:nth-child(2) .session {
+  background: rgba(131, 56, 236, 0.1);
+  border: 1px solid rgba(131, 56, 236, 0.3);
+}
+.week:nth-child(3) .session {
+  background: rgba(58, 134, 255, 0.1);
+  border: 1px solid rgba(58, 134, 255, 0.3);
+}
+.week:nth-child(4) .session {
+  background: rgba(6, 255, 165, 0.1);
+  border: 1px solid rgba(6, 255, 165, 0.3);
+}
+.week:nth-child(5) .session {
+  background: rgba(255, 190, 11, 0.1);
+  border: 1px solid rgba(255, 190, 11, 0.3);
+}
+.week:nth-child(6) .session {
+  background: rgba(255, 87, 34, 0.1);
+  border: 1px solid rgba(255, 87, 34, 0.3);
+}
+.week:nth-child(7) .session {
+  background: rgba(233, 30, 99, 0.1);
+  border: 1px solid rgba(233, 30, 99, 0.3);
+}
+.week:nth-child(8) .session {
+  background: rgba(0, 188, 212, 0.1);
+  border: 1px solid rgba(0, 188, 212, 0.3);
 }
 
 .session::before {
@@ -535,10 +780,10 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.15),
     transparent
   );
-  transition: left 0.5s ease;
+  transition: left 0.6s ease;
 }
 
 .session:hover::before {
@@ -546,24 +791,35 @@ body {
 }
 
 .session:hover {
-  transform: translateX(10px) scale(1.02);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: translateX(15px) scale(1.03);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .session-title {
   font-weight: 600;
   color: #fff;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-family: "Orbitron", monospace;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.session-title::before {
+  content: "⇨";
+  color: #06ffa5;
+  font-size: 1.1rem;
 }
 
 .session-desc {
-  color: #a0a0a0;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  color: #e0e0e0;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 .quantum-particles {
@@ -575,10 +831,10 @@ body {
 
 .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  opacity: 0.6;
+  opacity: 0.7;
   animation: quantumFloat 8s infinite linear;
 }
 
@@ -588,11 +844,11 @@ body {
     opacity: 0;
   }
   10% {
-    opacity: 0.6;
+    opacity: 0.7;
     transform: scale(1);
   }
   90% {
-    opacity: 0.6;
+    opacity: 0.7;
     transform: scale(1);
   }
   100% {
@@ -603,10 +859,10 @@ body {
 
 .hologram {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 80px;
-  height: 80px;
+  top: 30px;
+  right: 30px;
+  width: clamp(60px, 10vw, 100px);
+  height: clamp(60px, 10vw, 100px);
   border-radius: 50%;
   background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5);
   background-size: 300% 300%;
@@ -615,203 +871,247 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), 0 0 80px rgba(131, 56, 236, 0.4),
+    0 0 120px rgba(58, 134, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  z-index: 100;
+}
+
+.hologram:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Modal for detailed view */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: rgba(20, 20, 40, 0.95);
+  border-radius: 30px;
+  padding: clamp(30px, 5vw, 50px);
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+  font-family: "Orbitron", monospace;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #fff;
   font-size: 2rem;
-  box-shadow: 0 0 30px rgba(255, 0, 110, 0.5), 0 0 60px rgba(131, 56, 236, 0.3),
-    0 0 90px rgba(58, 134, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-close:hover {
+  transform: rotate(90deg);
+  background: rgba(255, 0, 110, 0.3);
+}
+
+.modal-body {
+  color: #e0e0e0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.modal-body h3 {
+  margin: 25px 0 15px;
+  color: #fff;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-family: "Orbitron", monospace;
+}
+
+.modal-body ul {
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.modal-body li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.modal-body li::before {
+  content: "▹";
+  position: absolute;
+  left: -20px;
+  color: #06ffa5;
+}
+
+.modal-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-btn {
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #3a86ff, #8338ec);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-family: "Orbitron", monospace;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(58, 134, 255, 0.4);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.modal-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(58, 134, 255, 0.6);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .week-content {
+    max-width: 60%;
+  }
 }
 
 @media (max-width: 768px) {
-  .header h1 {
-    font-size: 2.5rem;
+  .container {
+    padding: 40px 20px;
   }
+
   .week {
     flex-direction: column !important;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+    min-height: auto;
   }
+
   .week-content {
-    max-width: 90%;
-    margin: 30px 0 0 0;
+    max-width: 100%;
+    margin: 40px 20px; /* تعديل المسافات للموبايل */
   }
+
+  .week-nucleus {
+    position: relative;
+    top: 0;
+    margin-bottom: 30px;
+  }
+
   .neural-network {
     display: none;
   }
-  .week-nucleus {
-    position: relative;
-    margin-bottom: 30px;
-  }
-  .week-card {
-    padding: 25px;
-  }
-}
-/* Tablet styles */
-@media (max-width: 1024px) {
-  .container {
-    padding: 30px 15px;
-  }
-  
-  .header h1 {
-    font-size: 3.5rem;
-  }
-  
-  .week-content {
-    max-width: 50%;
-  }
-  
+
   .week-card {
     padding: 30px;
+    min-width: unset; /* إلغاء الحد الأدنى على الموبايل */
   }
-  
-  .week-title {
-    font-size: 1.6rem;
+
+  .session {
+    padding: 20px;
+  }
+
+  .hologram {
+    top: 20px;
+    right: 20px;
+  }
+
+  /* إلغاء حركة الكروت للجوانب في الموبايل */
+  .week:nth-child(even) .week-card:hover,
+  .week:nth-child(odd) .week-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .container {
-    padding: 20px 10px;
-  }
-  
+@media (max-width: 480px) {
   .header {
     margin-bottom: 50px;
   }
-  
-  .header h1 {
-    font-size: 2.8rem;
-    line-height: 1.2;
-    margin-bottom: 15px;
-  }
-  
-  .header p {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-  }
-  
-  .week {
-    flex-direction: column !important;
-    margin-bottom: 50px;
-    min-height: auto;
-  }
-  
-  .week-content {
-    max-width: 100%;
-    margin: 20px 0 0 0;
-  }
-  
-  .neural-network {
-    display: none;
-  }
-  
-  .week-nucleus {
-    position: relative;
-    margin-bottom: 20px;
-    width: 90px;
-    height: 90px;
-    font-size: 1.1rem;
-    left: auto;
-    transform: none;
-  }
-  
+
   .week-card {
-    padding: 25px 20px;
-    border-radius: 20px;
+    padding: 25px;
   }
-  
+
   .week-title {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    text-align: center;
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 15px;
   }
-  
-  .week-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-    align-self: center;
-  }
-  
+
   .session {
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 18px;
   }
-  
-  .session:hover {
-    transform: scale(1.02);
-  }
-  
-  .session-title {
-    font-size: 1rem;
-    margin-bottom: 6px;
-    text-align: center;
-  }
-  
-  .session-desc {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    text-align: center;
-  }
-  
-  .hologram {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-    top: 15px;
-    right: 15px;
+
+  .modal-content {
+    padding: 25px;
   }
 }
 
-/* Small mobile styles */
-@media (max-width: 480px) {
-  .container {
-    padding: 15px 8px;
+/* تحسين المسافات حسب حجم الشاشة */
+@media (min-width: 1200px) {
+  .week-content {
+    margin: 0 30px; /* مسافة صغيرة للشاشات الكبيرة */
   }
-  
-  .header h1 {
-    font-size: 2.2rem;
-  }
-  
-  .header p {
-    font-size: 1rem;
-  }
-  
-  .week-nucleus {
-    width: 80px;
-    height: 80px;
-    font-size: 1rem;
-  }
-  
-  .week-card {
-    padding: 20px 15px;
-    border-radius: 15px;
-  }
-  
-  .week-title {
-    font-size: 1.2rem;
-  }
-  
-  .week-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-  }
-  
-  .session {
-    padding: 12px;
-  }
-  
-  .session-title {
-    font-size: 0.95rem;
-  }
-  
-  .session-desc {
-    font-size: 0.85rem;
-  }
-  
-  .hologram {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+}
+
+@media (min-width: 1400px) {
+  .week-content {
+    margin: 0 40px; /* مسافة صغيرة للشاشات الأكبر */
   }
 }

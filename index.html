@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Fundamentals Roadmap</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="cosmic-bg"></div>
     <div class="stars" id="stars"></div>
     <div class="hologram">🐍</div>
-    
+
+    <!-- Modal for detailed view -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Session Details</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" id="modalBtn">Continue Learning</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
-            <h1>PYTHON for beginner</h1>
+            <h1>PYTHON NEXUS</h1>
             <p>NEURAL PROGRAMMING PATHWAY</p>
         </div>
 
@@ -21,7 +42,8 @@
             <div class="neural-network"></div>
             <div class="hex-grid"></div>
             <div class="quantum-particles" id="particles"></div>
-            
+
+            <!-- Week 1 -->
             <div class="week">
                 <div class="week-nucleus">W1</div>
                 <div class="week-content">
@@ -30,18 +52,55 @@
                             <div class="week-icon">🚀</div>
                             Python Genesis & Core Setup
                         </h3>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 01" data-details="
+                            <h3>Python Origins & Ecosystem</h3>
+                            <p>Explore the birth of Python and its evolution into one of the most powerful programming languages.</p>
+                            <ul>
+                                <li>History and philosophy of Python</li>
+                                <li>Comparison with other programming languages</li>
+                                <li>Python's role in modern technology stacks</li>
+                                <li>Major applications (Web, Data Science, AI, etc.)</li>
+                            </ul>
+                            <h3>VS Code Integration</h3>
+                            <p>Master the setup of your development environment for optimal Python programming.</p>
+                            <ul>
+                                <li>Installing VS Code and essential extensions</li>
+                                <li>Configuring the Python interpreter</li>
+                                <li>Setting up linting and formatting</li>
+                                <li>Keyboard shortcuts for productivity</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 01</div>
-                            <div class="session-desc">Python origins, evolutionary advantages, ecosystem applications & VS Code integration</div>
+                            <div class="session-desc">Python origins, evolutionary advantages, ecosystem applications &
+                                VS Code integration</div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 02" data-details="
+                            <h3>System Installation</h3>
+                            <p>Step-by-step guide to installing Python on various operating systems.</p>
+                            <ul>
+                                <li>Python installation on Windows, macOS, Linux</li>
+                                <li>Understanding Python versions and compatibility</li>
+                                <li>PATH configuration and environment variables</li>
+                                <li>Verifying the installation</li>
+                            </ul>
+                            <h3>First Code Manifestation</h3>
+                            <p>Write and execute your first Python program with confidence.</p>
+                            <ul>
+                                <li>Hello World program breakdown</li>
+                                <li>Understanding Python syntax basics</li>
+                                <li>Running scripts from command line</li>
+                                <li>Interactive Python shell (REPL)</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 02</div>
-                            <div class="session-desc">System installation, development environment configuration, first code manifestation</div>
+                            <div class="session-desc">System installation, development environment configuration, first
+                                code manifestation</div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Week 2 -->
             <div class="week">
                 <div class="week-nucleus">W2</div>
                 <div class="week-content">
@@ -50,18 +109,55 @@
                             <div class="week-icon">⚛️</div>
                             Data Structures & Variable Matrix
                         </h3>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 03" data-details="
+                            <h3>Variable Quantum States</h3>
+                            <p>Understanding variables as the fundamental building blocks of Python programs.</p>
+                            <ul>
+                                <li>Variable naming conventions and rules</li>
+                                <li>Understanding Python's dynamic typing</li>
+                                <li>Variable scope and lifetime</li>
+                                <li>Best practices for variable usage</li>
+                            </ul>
+                            <h3>Data Type Classification</h3>
+                            <p>Deep dive into Python's basic data types and their characteristics.</p>
+                            <ul>
+                                <li>Integer and floating-point numbers</li>
+                                <li>Strings and character manipulation</li>
+                                <li>Boolean values and logical operations</li>
+                                <li>Type checking and conversion</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 03</div>
-                            <div class="session-desc">Variable quantum states, data type classification (int, float, str), type metamorphosis</div>
+                            <div class="session-desc">Variable quantum states, data type classification (int, float,
+                                str), type metamorphosis</div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 04" data-details="
+                            <h3>List Architectures</h3>
+                            <p>Mastering Python's most versatile data structure - the list.</p>
+                            <ul>
+                                <li>Creating and initializing lists</li>
+                                <li>Accessing and modifying list elements</li>
+                                <li>Common list operations and methods</li>
+                                <li>List copying and memory considerations</li>
+                            </ul>
+                            <h3>Element Navigation Protocols</h3>
+                            <p>Techniques for working with list elements efficiently.</p>
+                            <ul>
+                                <li>Indexing and slicing techniques</li>
+                                <li>Iterating through lists</li>
+                                <li>List comprehensions (basic introduction)</li>
+                                <li>Nested lists and multi-dimensional data</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 04</div>
-                            <div class="session-desc">List architectures, element navigation protocols, fundamental operations</div>
+                            <div class="session-desc">List architectures, element navigation protocols, fundamental
+                                operations</div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Week 3 -->
             <div class="week">
                 <div class="week-nucleus">W3</div>
                 <div class="week-content">
@@ -70,18 +166,55 @@
                             <div class="week-icon">🔢</div>
                             Computational Logic & String Synthesis
                         </h3>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 05" data-details="
+                            <h3>Mathematical Operation Algorithms</h3>
+                            <p>Performing calculations and mathematical operations in Python.</p>
+                            <ul>
+                                <li>Arithmetic operators (+, -, *, /, %, **)</li>
+                                <li>Assignment operators and shortcuts</li>
+                                <li>Built-in math functions</li>
+                                <li>Working with large numbers</li>
+                            </ul>
+                            <h3>Precedence Hierarchies</h3>
+                            <p>Understanding how Python evaluates complex expressions.</p>
+                            <ul>
+                                <li>Operator precedence rules</li>
+                                <li>Using parentheses to control evaluation</li>
+                                <li>Common pitfalls in expression evaluation</li>
+                                <li>Best practices for writing clear expressions</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 05</div>
-                            <div class="session-desc">Mathematical operation algorithms, precedence hierarchies, calculation optimization</div>
+                            <div class="session-desc">Mathematical operation algorithms, precedence hierarchies,
+                                calculation optimization</div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 06" data-details="
+                            <h3>String Manipulation Mechanics</h3>
+                            <p>Mastering text processing in Python through string operations.</p>
+                            <ul>
+                                <li>String creation and escaping characters</li>
+                                <li>Common string methods (upper, lower, strip, etc.)</li>
+                                <li>String formatting techniques</li>
+                                <li>Working with Unicode and special characters</li>
+                            </ul>
+                            <h3>Slicing Techniques</h3>
+                            <p>Advanced techniques for extracting and manipulating string segments.</p>
+                            <ul>
+                                <li>Positive and negative indexing</li>
+                                <li>Slice notation and parameters</li>
+                                <li>String reversal and pattern extraction</li>
+                                <li>Performance considerations</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 06</div>
-                            <div class="session-desc">String manipulation mechanics, slicing techniques, concatenation protocols</div>
+                            <div class="session-desc">String manipulation mechanics, slicing techniques, concatenation
+                                protocols</div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Week 4 -->
             <div class="week">
                 <div class="week-nucleus">W4</div>
                 <div class="week-content">
@@ -90,18 +223,55 @@
                             <div class="week-icon">🌀</div>
                             Decision Trees & Loop Dynamics
                         </h3>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 07" data-details="
+                            <h3>Conditional Branching</h3>
+                            <p>Controlling program flow with if, elif, and else statements.</p>
+                            <ul>
+                                <li>Boolean expressions and comparisons</li>
+                                <li>Logical operators (and, or, not)</li>
+                                <li>Nested conditionals</li>
+                                <li>Ternary operator for concise conditionals</li>
+                            </ul>
+                            <h3>Logical Gate Systems</h3>
+                            <p>Building complex decision-making structures in your programs.</p>
+                            <ul>
+                                <li>Truth tables and boolean algebra</li>
+                                <li>Short-circuit evaluation</li>
+                                <li>Combining multiple conditions</li>
+                                <li>Common conditional patterns</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 07</div>
-                            <div class="session-desc">Conditional branching (if, elif, else), logical gate systems, decision matrices</div>
+                            <div class="session-desc">Conditional branching (if, elif, else), logical gate systems,
+                                decision matrices</div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 08" data-details="
+                            <h3>Iteration Mechanisms</h3>
+                            <p>Automating repetitive tasks with loops in Python.</p>
+                            <ul>
+                                <li>For loops and iterables</li>
+                                <li>While loops and termination conditions</li>
+                                <li>Loop control statements (break, continue, pass)</li>
+                                <li>Nested loops and their applications</li>
+                            </ul>
+                            <h3>Cycle Optimization</h3>
+                            <p>Writing efficient loops for better performance.</p>
+                            <ul>
+                                <li>Minimizing work inside loops</li>
+                                <li>Loop invariants and optimization</li>
+                                <li>Using built-in functions with loops</li>
+                                <li>Avoiding common loop pitfalls</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 08</div>
-                            <div class="session-desc">Iteration mechanisms (for, while), flow control (break, continue), cycle optimization</div>
+                            <div class="session-desc">Iteration mechanisms (for, while), flow control (break, continue),
+                                cycle optimization</div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Week 5 -->
             <div class="week">
                 <div class="week-nucleus">W5</div>
                 <div class="week-content">
@@ -110,18 +280,55 @@
                             <div class="week-icon">⚙️</div>
                             Function Engineering & Modular Design
                         </h3>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 09" data-details="
+                            <h3>Function Architecture</h3>
+                            <p>Building reusable code blocks with functions.</p>
+                            <ul>
+                                <li>Function definition and invocation</li>
+                                <li>Parameters vs arguments</li>
+                                <li>Return values and None</li>
+                                <li>Function documentation and docstrings</li>
+                            </ul>
+                            <h3>Parameter Transmission</h3>
+                            <p>Understanding how data is passed to functions.</p>
+                            <ul>
+                                <li>Positional vs keyword arguments</li>
+                                <li>Default parameter values</li>
+                                <li>Variable-length arguments (*args, **kwargs)</li>
+                                <li>Mutable vs immutable arguments</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 09</div>
-                            <div class="session-desc">Function architecture, parameter transmission, return value synthesis</div>
+                            <div class="session-desc">Function architecture, parameter transmission, return value
+                                synthesis</div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 10" data-details="
+                            <h3>Advanced Function Implementations</h3>
+                            <p>Taking your functions to the next level.</p>
+                            <ul>
+                                <li>First-class functions and higher-order functions</li>
+                                <li>Lambda functions and anonymous functions</li>
+                                <li>Closures and function factories</li>
+                                <li>Decorators (basic concepts)</li>
+                            </ul>
+                            <h3>Real-world Problem Solving</h3>
+                            <p>Applying functions to solve practical problems.</p>
+                            <ul>
+                                <li>Breaking down problems into functions</li>
+                                <li>Function composition</li>
+                                <li>Recursion basics</li>
+                                <li>Testing and debugging functions</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 10</div>
-                            <div class="session-desc">Advanced function implementations, real-world problem solving scenarios</div>
+                            <div class="session-desc">Advanced function implementations, real-world problem solving
+                                scenarios</div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Week 6 -->
             <div class="week">
                 <div class="week-nucleus">W6</div>
                 <div class="week-content">
@@ -130,18 +337,55 @@
                             <div class="week-icon">🔮</div>
                             Advanced Collection Algorithms
                         </h3>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 11" data-details="
+                            <h3>List Comprehension Mastery</h3>
+                            <p>Elegant and efficient list transformations.</p>
+                            <ul>
+                                <li>Basic list comprehension syntax</li>
+                                <li>Conditionals in list comprehensions</li>
+                                <li>Nested list comprehensions</li>
+                                <li>Performance benefits and considerations</li>
+                            </ul>
+                            <h3>Advanced Iteration Patterns</h3>
+                            <p>Sophisticated ways to process sequences.</p>
+                            <ul>
+                                <li>enumerate() for index-value pairs</li>
+                                <li>zip() for parallel iteration</li>
+                                <li>reversed() for backward iteration</li>
+                                <li>sorted() for ordered processing</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 11</div>
-                            <div class="session-desc">List comprehension mastery, advanced iteration patterns, performance optimization</div>
+                            <div class="session-desc">List comprehension mastery, advanced iteration patterns,
+                                performance optimization</div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 12" data-details="
+                            <h3>Tuple Immutability</h3>
+                            <p>Understanding and leveraging immutable sequences.</p>
+                            <ul>
+                                <li>Tuple creation and operations</li>
+                                <li>When to use tuples vs lists</li>
+                                <li>Tuple unpacking and multiple assignment</li>
+                                <li>Named tuples (basic concept)</li>
+                            </ul>
+                            <h3>Set Theory Operations</h3>
+                            <p>Working with unique element collections.</p>
+                            <ul>
+                                <li>Set creation and manipulation</li>
+                                <li>Set operations (union, intersection, difference)</li>
+                                <li>Frozen sets and immutable variants</li>
+                                <li>Practical applications of sets</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 12</div>
-                            <div class="session-desc">Tuple immutability, set theory operations, collection performance analysis</div>
+                            <div class="session-desc">Tuple immutability, set theory operations, collection performance
+                                analysis</div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Week 7 -->
             <div class="week">
                 <div class="week-nucleus">W7</div>
                 <div class="week-content">
@@ -150,18 +394,55 @@
                             <div class="week-icon">🗃️</div>
                             Dictionary Mapping & Error Handling
                         </h3>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 13" data-details="
+                            <h3>Key-Value Pair Architectures</h3>
+                            <p>Mastering Python's dictionary data structure.</p>
+                            <ul>
+                                <li>Dictionary creation and initialization</li>
+                                <li>Accessing and modifying dictionary elements</li>
+                                <li>Common dictionary methods</li>
+                                <li>Dictionary views (keys, values, items)</li>
+                            </ul>
+                            <h3>Mapping Strategies</h3>
+                            <p>Effective techniques for working with dictionaries.</p>
+                            <ul>
+                                <li>Dictionary comprehension</li>
+                                <li>Default dictionaries (basic concept)</li>
+                                <li>Nested dictionaries</li>
+                                <li>Using dictionaries as switch statements</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 13</div>
-                            <div class="session-desc">Key-value pair architectures, dictionary manipulation, mapping strategies</div>
+                            <div class="session-desc">Key-value pair architectures, dictionary manipulation, mapping
+                                strategies</div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 14" data-details="
+                            <h3>Exception Handling Protocols</h3>
+                            <p>Gracefully handling errors in your programs.</p>
+                            <ul>
+                                <li>try-except block structure</li>
+                                <li>Catching specific exceptions</li>
+                                <li>Multiple except clauses</li>
+                                <li>Exception hierarchy</li>
+                            </ul>
+                            <h3>Error Recovery Systems</h3>
+                            <p>Building robust programs that handle failures.</p>
+                            <ul>
+                                <li>else and finally clauses</li>
+                                <li>Raising exceptions</li>
+                                <li>Custom exception classes (basic concept)</li>
+                                <li>Best practices for exception handling</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 14</div>
-                            <div class="session-desc">Exception handling protocols (try, except), error recovery systems</div>
+                            <div class="session-desc">Exception handling protocols (try, except), error recovery systems
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Week 8 -->
             <div class="week">
                 <div class="week-nucleus">W8</div>
                 <div class="week-content">
@@ -170,17 +451,71 @@
                             <div class="week-icon">🛸</div>
                             Library Integration & Project Synthesis
                         </h3>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 15" data-details="
+                            <h3>Mathematical Computation Libraries</h3>
+                            <p>Extending Python's capabilities with the math module.</p>
+                            <ul>
+                                <li>math module functions and constants</li>
+                                <li>random module for randomization</li>
+                                <li>statistics module for basic stats</li>
+                                <li>Generating random numbers and selections</li>
+                            </ul>
+                            <h3>Algorithmic Implementations</h3>
+                            <p>Solving problems with standard library tools.</p>
+                            <ul>
+                                <li>Common algorithms with standard libraries</li>
+                                <li>Time and space complexity basics</li>
+                                <li>Problem decomposition strategies</li>
+                                <li>Algorithm optimization techniques</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 15</div>
-                            <div class="session-desc">Mathematical computation libraries (math, random), algorithmic implementations</div>
+                            <div class="session-desc">Mathematical computation libraries (math, random), algorithmic
+                                implementations</div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 16" data-details="
+                            <h3>Temporal Processing</h3>
+                            <p>Working with dates and times in Python.</p>
+                            <ul>
+                                <li>datetime module overview</li>
+                                <li>Creating and formatting dates/times</li>
+                                <li>Time delta calculations</li>
+                                <li>Time zones basics</li>
+                            </ul>
+                            <h3>Comprehensive Knowledge Synthesis</h3>
+                            <p>Bringing together all concepts in practical applications.</p>
+                            <ul>
+                                <li>Review of key concepts</li>
+                                <li>Integration of multiple concepts</li>
+                                <li>Problem-solving strategies</li>
+                                <li>Debugging techniques</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 16</div>
-                            <div class="session-desc">Temporal processing (datetime), comprehensive knowledge synthesis</div>
+                            <div class="session-desc">Temporal processing (datetime), comprehensive knowledge synthesis
+                            </div>
                         </div>
-                        <div class="session">
+                        <div class="session" data-title="Neural Link 17" data-details="
+                            <h3>Capstone Project Development</h3>
+                            <p>Applying all learned concepts to a complete project.</p>
+                            <ul>
+                                <li>Project ideation and planning</li>
+                                <li>Breaking down the project into components</li>
+                                <li>Implementing core functionality</li>
+                                <li>Testing and refinement</li>
+                            </ul>
+                            <h3>Real-world Application Deployment</h3>
+                            <p>Preparing your project for real-world use.</p>
+                            <ul>
+                                <li>User interface considerations</li>
+                                <li>Error handling and edge cases</li>
+                                <li>Documentation and user instructions</li>
+                                <li>Next steps for project enhancement</li>
+                            </ul>
+                        ">
                             <div class="session-title">Neural Link 17</div>
-                            <div class="session-desc">Capstone project development, real-world application deployment</div>
+                            <div class="session-desc">Capstone project development, real-world application deployment
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -190,4 +525,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>
