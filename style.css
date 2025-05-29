@@ -643,3 +643,175 @@ body {
     padding: 25px;
   }
 }
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px 15px;
+  }
+  
+  .header h1 {
+    font-size: 3.5rem;
+  }
+  
+  .week-content {
+    max-width: 50%;
+  }
+  
+  .week-card {
+    padding: 30px;
+  }
+  
+  .week-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+  
+  .header {
+    margin-bottom: 50px;
+  }
+  
+  .header h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .week {
+    flex-direction: column !important;
+    margin-bottom: 50px;
+    min-height: auto;
+  }
+  
+  .week-content {
+    max-width: 100%;
+    margin: 20px 0 0 0;
+  }
+  
+  .neural-network {
+    display: none;
+  }
+  
+  .week-nucleus {
+    position: relative;
+    margin-bottom: 20px;
+    width: 90px;
+    height: 90px;
+    font-size: 1.1rem;
+    left: auto;
+    transform: none;
+  }
+  
+  .week-card {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+  
+  .week-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .week-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    align-self: center;
+  }
+  
+  .session {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .session:hover {
+    transform: scale(1.02);
+  }
+  
+  .session-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  
+  .session-desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .hologram {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px 8px;
+  }
+  
+  .header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .week-nucleus {
+    width: 80px;
+    height: 80px;
+    font-size: 1rem;
+  }
+  
+  .week-card {
+    padding: 20px 15px;
+    border-radius: 15px;
+  }
+  
+  .week-title {
+    font-size: 1.2rem;
+  }
+  
+  .week-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  
+  .session {
+    padding: 12px;
+  }
+  
+  .session-title {
+    font-size: 0.95rem;
+  }
+  
+  .session-desc {
+    font-size: 0.85rem;
+  }
+  
+  .hologram {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
